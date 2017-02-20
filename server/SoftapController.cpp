@@ -55,6 +55,7 @@ using android::base::WriteStringToFile;
 #endif
 
 #ifdef LIBWPA_CLIENT_EXISTS
+//std:: string hostapd_unix_file(StringPrintf("/data/misc/wifi/hostapd/wlan0"));
 std:: string hostapd_unix_file(StringPrintf("/data/misc/wifi/hostapd/ap0"));
 static const char HOSTAPD_DHCP_DIR[]    = "/data/misc/dhcp";
 #endif

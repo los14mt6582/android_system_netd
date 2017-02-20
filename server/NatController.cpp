@@ -376,7 +376,9 @@ int NatController::setForwardRules(bool add, const char *intIface, const char *e
         goto err_return;
     }
 
-    if (runCmd(ARRAY_SIZE(cmd4), cmd4) && add) {
+    // Revert "Don't start tethering if IPv6 RPF is not supported."
+    // STOPSHIP: Make this an error.
+    if (runCmd(ARRAY_SIZE(cmd4), cmd4) && add && false /* STOPSHIP */) {
         rc = -1;
         goto err_rpfilter;
     }
